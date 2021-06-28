@@ -6,6 +6,26 @@
 ---
 
 ## General
+
+*"!!" grabs the last run command.*  
+for example  
+```sh
+sudo !! # Run the last command as root
+```
+
+*Extract tarball from internet without local saving*  
+```sh
+# 1st opt:
+wget -qO - "http://www.tarball.com/tarball.gz"  | tar zxvf -
+# 2nd opt:
+curl http://tarball.com/tarball.gz | tar xz
+```
+
+*Serve current directory tree at http port 8000*  
+```sh
+python -m http.server 8000
+```
+
 *Show $PATH sorted with unique count*  
 ```sh
 echo $PATH | sed 's/:/\n/g' | sort | uniq -c
@@ -22,6 +42,10 @@ bullshit | cowsay -f $(ls /usr/share/cows/|shuf -n 1) | lolcat
 pip freeze --user | cut -d= -f1 | xargs pip install --user -U
 ```
 
+*Calculate days on which Friday the 13th occurs*  
+```sh
+for i in {2021..2025}-{01..12}-13; do [[ $(date --date $i +"%u" | grep 5) != 5 ]] || echo "$i Friday the 13th"; done
+```
 ---
 ## yay / pacman
 *Remove unrequired deps:*  
