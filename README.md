@@ -46,6 +46,12 @@ pip freeze --user | cut -d= -f1 | xargs pip install --user -U
 ```sh
 for i in {2021..2025}-{01..12}-13; do [[ $(date --date $i +"%u" | grep 5) != 5 ]] || echo "$i Friday the 13th"; done
 ```
+
+*Compare two directorys*  
+```sh
+diff <(cd dir1 && find | sort) <(cd dir2 && find | sort)
+```
+
 ---
 ## yay / pacman
 *Remove unrequired deps:*  
