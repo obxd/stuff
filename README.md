@@ -52,6 +52,10 @@ for i in {2021..2025}-{01..12}-13; do [[ $(date --date $i +"%u" | grep 5) != 5 ]
 diff <(cd dir1 && find | sort) <(cd dir2 && find | sort)
 ```
 
+*Make dir and cd into it*  
+```sh
+mkdir foo && cd $_
+```
 ---
 ## yay / pacman
 *Remove unrequired deps:*  
