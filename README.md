@@ -7,74 +7,63 @@
 
 ## General
 
-*"!!" grabs the last run command.*  
+### "!!" grabs the last run command.
 for example  
 ```sh
 sudo !! # Run the last command as root
 ```
 
-*Extract tarball from internet without local saving*  
+### Extract tarball from internet without local saving
 ```sh
-# 1st opt:
 wget -qO - "http://www.tarball.com/tarball.gz"  | tar zxvf -
-# 2nd opt:
-curl http://tarball.com/tarball.gz | tar xz
 ```
 
-*Serve current directory tree at http port 8000*  
+### Serve current directory tree at http port 8000
 ```sh
 python -m http.server 8000
 ```
 
-*Show $PATH sorted with unique count*  
+### Show $PATH sorted with unique coun
 ```sh
 echo $PATH | sed 's/:/\n/g' | sort | uniq -c
 ```
-*Random cooooolooooored cowsay smart stuff*  
+### Random cooooolooooored cowsay smart stuf
 
 ```sh
 bullshit | cowsay -f $(ls /usr/share/cows/|shuf -n 1) | lolcat
 ```
-*note:* Requires cowsay lolcat bullshit.  
+*note:* Requires cowsay lolcat bullshit.
 
-*Pip update my stuff (user stuff)*
+### Pip update my stuff (user stuf
 ```sh
 pip freeze --user | cut -d= -f1 | xargs pip install --user -U
 ```
 
-*Calculate days on which Friday the 13th occurs*  
+### Calculate days on which Friday the 13th occurs
 ```sh
 for i in {2021..2025}-{01..12}-13; do [[ $(date --date $i +"%u" | grep 5) != 5 ]] || echo "$i Friday the 13th"; done
 ```
 
-*Compare two directorys*  
+### Compare two directorys
 ```sh
 diff <(cd dir1 && find | sort) <(cd dir2 && find | sort)
 ```
-
-*Make dir and cd into it*  
+ 
+### Make dir and cd into i
 ```sh
 mkdir foo && cd $_
 ```
 ---
 ## yay / pacman
-*Remove unrequired deps:*  
+### Remove unrequired deps
 ```sh
 pacman -Rsn $(pacman -Qdtq)
-# also work for yay
+```
+```sh
 yay -Rsn $(yay -Qdtq)
 ```
-explanation:   
-* -Q -> query.  
--d -> deps.  
--t -> unrequired.  
--q -> quiet.  
-* -R -> Remove.  
--s -> recursive.  
--n -> nosave.  
 
-
-*Print 20 last installed/updated packages:*  
+### Print 20 last installed/updated packages
 ```sh
 expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
 ```
