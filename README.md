@@ -1,6 +1,7 @@
 # Scripts.  
 *image-show.py* - show image on terminal using ueberzug lib.
 
+*bouncing_char* - bouncing char using curses.
 
 # command-line gems.  
 ---
