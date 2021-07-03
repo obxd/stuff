@@ -54,6 +54,12 @@ diff <(cd dir1 && find | sort) <(cd dir2 && find | sort)
 ```sh
 mkdir foo && cd $_
 ```
+
+### Remove empty lines from file and save in newfile
+```sh
+grep . file > newfile
+```
+
 ---
 ## yay / pacman
 ### Remove unrequired deps
