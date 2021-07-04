@@ -60,6 +60,10 @@ mkdir foo && cd $_
 grep . file > newfile
 ```
 
+### Show apps that use internet connection at the moment
+```sh
+ss -p
+```
 ---
 ## yay / pacman
 ### Remove unrequired deps
