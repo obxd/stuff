@@ -80,3 +80,9 @@ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
 ```
 *note:* Requires expac.  
 
+
+### hear self with pactl
+```sh 
+pactl load-module module-loopback latency_msec=1
+pactl unload-module module-loopback
+```
