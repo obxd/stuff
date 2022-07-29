@@ -1,5 +1,4 @@
 #!/usr/bin/python
-import time
 import sys
 import ueberzug.lib.v0 as ueberzug
 
